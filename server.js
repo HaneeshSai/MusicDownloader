@@ -18,7 +18,7 @@ app.post("/download", (req, res) => {
   const link = req.body.videoUrl;
 
   const video = ytdl(link, { filter: "audioonly" });
-  video.pipe(fs.createWriteStream("./audio/audio.mp3"));
+  video.pipe(fs.createWriteStream("audio.mp3"));
   console.log("downloaded");
 });
 
